@@ -14,12 +14,12 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        titles: {
+        title: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
         post_text: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(300),
             allowNull: false,
             validate: {
                 len: [1]
