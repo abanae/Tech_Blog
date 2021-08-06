@@ -1,16 +1,15 @@
 // Dependencies
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Comment, Post ,User } = require('../../models');
 
 // get all customers route
 router.get('/', async (req, res) => {
     try {
-        const allUsers = await User.findAll();
-        const users = allUsers.map(user => user.toJSON());
-        // render to homepage
-        res.status(200).render('homepage', { users });
+        const userData = await User.findAll({
+            attributes: { exclude: ['password'] }
+            });
+        res.status(200).json(userData);
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
