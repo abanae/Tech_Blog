@@ -7,7 +7,7 @@ const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
-// const session = require('express-session');
+const session = require('express-session');
 
 // Starts the server to begin listening
 const app = express();
