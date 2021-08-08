@@ -1,6 +1,6 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
-
+console.log(event.target);
     const comment_text = document.querySelector('').value.trim();
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
@@ -19,7 +19,8 @@ const commentFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.reload();
+            console.log('response was ok');
+            // document.location.reload();
         } else {
             alert(response.statusText);
         }

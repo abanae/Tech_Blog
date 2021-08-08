@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // getting a single post
-router.get('/:id', withAuth, async (req, res) =>{
+router.get('/getpost/:id', withAuth, async (req, res) =>{
     console.log('route hit');
     try {
         const postSingle = await Post.findByPk(req.params.id, {
