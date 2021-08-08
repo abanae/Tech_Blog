@@ -5,6 +5,7 @@ const { Post, User } = require('../models');
 
 // Getting all Posts
 router.get('/', async (req, res) => {
+  console.log('homeroute hit');
     try {
       const postData = await Post.findAll({
         include: [
@@ -15,7 +16,6 @@ router.get('/', async (req, res) => {
         ],
       });
       const posts = postData.map((post) => post.get({ plain: true }));
-      // console.log(posts);
   //  Rendering to page
       res.render('homepage', { 
         posts, 
@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
   
    // Getting posts by id
   router.get('/posts/:id', async (req, res) => {
+     console.log('post homeroute hit');
     try {
       const postData = await Post.findByPk(req.params.id, {
         include: [

@@ -30,7 +30,7 @@
     {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <a id="posts" href="/post/{{post.id}}">{{post.title}}</a>
+        <a id="posts" href="/api/posts/{{post.id}}">{{post.title}}</a>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
