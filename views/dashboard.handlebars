@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome {{username}}!</h2>
   </div>
 </div>
 
@@ -23,14 +23,14 @@
     </form>
   </div>
 
-  {{#if postss.length}}
-  <div class="col-md-6 project-list">
+  {{#if posts.length}}
+  <div class="col-md-6 post-list">
     <h3>Current Posts:</h3>
 
     {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+        <a id="posts" href="/post/{{post.id}}">{{post.title}}</a>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
@@ -41,4 +41,4 @@
   {{/if}}
 </div>
 
-<script src="./javascript/profile.js"></script>
+<script src="./javascript/dashboard.js"></script>
