@@ -1,50 +1,50 @@
-<div class="row mb-4 project">
-  <div class="col-md-5">
+<div class="project">
+  <div class="col-md-5" style="background-color:#201110">
     <h1>
-      <a href="/api/posts/getpost/{{id}}">{{title}}</a>
+      <a style="color:rgb(244, 246, 248);" href="/api/posts/getpost/{{id}}">{{title}}</a>
     </h1>
   </div>
-  
+
   <div class="col-md-7">
     <h3>
       {{post_text}}
       <p>Created by {{user.username}} on {{createdAt}}</p>
     </h3>
-    
   </div>
 </div>
 
- <br>
-
-<div> 
-<div>
-     <h3>Comments:</h3>
-     
-     {{#each comments as |comment|}}
-<div>
-     <h4> User: {{comment.user.username}}</h4>
-      <h3>{{comment_text}}
-        <p>{{createdAt}}</p>
-      </h3>
-     <div class="form-group">
-           <div class="col-md-4">
-        <button class="btn btn-sm btn-danger commentDelete" data-id="{{comments.id}}">DELETE</button>
-        <button class="btn btn-sm btn-danger commentUpdate" data-id="{{comments.id}}">UPDATE</button>
-      </div>
-</div>
-{{/each}}
-</div>
-</div>
-
 <br>
-<form class="form new-Post-form">
-     
+
+<div class="ml" style="background-color:#201110">
+  <h3 style="color:rgb(244, 246, 248);">Comments:</h3>
+</div>
+{{#each comments as |comment|}}
+<div class="project" style="background-color:#ccdad1">
+  <div class="postTitle" style="background-color:#201110">
+    <h4 style="color:rgb(244, 246, 248);"> User: {{comment.user.username}}</h4>
+    <h3 style="color:rgb(244, 246, 248);">{{comment_text}}
+      <p style="color:rgb(244, 246, 248);">{{createdAt}}</p>
+    </h3>
+    </div>
+    <div>
+        {{!-- <div class="col-md-4">
+          <button class="btn commentUpdate" data-id="{{comments.id}}">Update</button>
+          <button class="btn commentDelete" data-id="{{comments.id}}">Delete</button>
+        </div> --}}
+      </div>
+      </div>
+    {{/each}}
+
+
+
+    <br>
+    <form class="form new-Post-form">
       <div class="form-group">
-        <label for="content">Leave a Comment:<span id = "postId"> {{id}} </span></label>
+        <label for="content">Leave a Comment:<span id="postId"> {{id}} </span></label>
         <textarea class="form-input" id="content" name="content"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" id = "submit"  class="btn btn-primary">Create</button>
+        <button type="submit" id="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
 
