@@ -1,18 +1,37 @@
 <div class="row mb-4 project">
   <div class="col-md-5">
-    <h2>
+    <h1>
       <a href="/api/posts/getpost/{{id}}">{{title}}</a>
-    </h2>
-
-    <p>Created by {{user.username}} on {{createdAt}}</p>
+    </h1>
   </div>
+  
   <div class="col-md-7">
-    <p>
+    <h3>
       {{post_text}}
-    </p>
+      <p>Created by {{user.username}} on {{createdAt}}</p>
+    </h3>
+    
   </div>
 </div>
+<div>
+ <br>
+<div>
+     <h3>Comments:</h3>
+     
+     {{#each comments as |comment|}}
+<div>
+     <h4> User: {{comment.user.username}}</h4>
+      <h3>{{comment_text}}
+        <p>{{createdAt}}</p>
+      </h3>
+     
+</div>
+{{/each}}
+</div>
 
+</div>
+
+<br>
 <form class="form new-Post-form">
      
       <div class="form-group">
@@ -26,5 +45,5 @@
 
     <section></section>
 
-    
+
     <script src="/javascript/comment.js"></script>
