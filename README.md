@@ -8,7 +8,7 @@ A mysql database and CMS-style Blog built using Model View Controller (MVC) para
 
    - [Installation](#installation)
    - [Usage](#usage)
-   - [Demo](#app-demo)
+   - [Final Results](#final-results)
    - [Tests](#testing)
    - [Questions](#additional-info)
 
@@ -42,8 +42,11 @@ A mysql database and CMS-style Blog built using Model View Controller (MVC) para
 6. Log in required to use app
 
 
-## App Demo:
-- (giphy here)
+## Final Results:
+- ![Login](./assets/img/logIn.PNG)
+- ![Creating Post](./assets//img/creating.PNG)
+- ![View All Posts](./assets/img/homepage.PNG)
+- ![Comment section](./assets/img/newcomments.PNG)
 - [![Deploy](https://www.herokucdn.com/deploy/button.svg)](email here)
 
 
