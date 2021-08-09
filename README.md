@@ -43,10 +43,10 @@ A mysql database and CMS-style Blog built using Model View Controller (MVC) para
 
 
 ## Final Results:
-- ![Login](./assets/img/logIn.PNG)
-- ![Creating Post](./assets//img/creating.PNG)
-- ![View All Posts](./assets/img/homepage.PNG)
-- ![Comment section](./assets/img/newcomments.PNG)
+![Login](./assets/img/logIn.PNG)
+![Creating Post](./assets//img/creating.PNG)
+![View All Posts](./assets/img/homepage.PNG)
+![Comment section](./assets/img/newcomments.PNG)
 - [![Deploy](https://www.herokucdn.com/deploy/button.svg)](email here)
 
 
