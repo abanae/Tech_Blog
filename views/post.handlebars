@@ -13,19 +13,14 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-
-    <form class="form comment-form">
+<form class="form new-Post-form">
+     
       <div class="form-group">
-        <label for="comment-added"> Comments: </label>
-        <input class="form-input" type="text" id="comment-added" />
+        <label for="content">Leave a Comment:<span id = "postId"> {{id}} </span></label>
+        <textarea class="form-input" id="content" name="content"></textarea>
       </div>
       <div class="form-group">
-          <button class="btn" type="submit">add comment</button>
+        <button type="submit" id = "submit"  class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
-  <div class="col-md-6">
-
-    <script src="./javascript/comment.js"></script>
+    <script src="/javascript/comment.js"></script>
