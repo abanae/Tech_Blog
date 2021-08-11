@@ -31,15 +31,27 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// Getting  Sigle Comment
+router.get('/:id', withAuth, async (req, res) => {
+    console.log('route hit');
+    try {
+        const commentSingle = await Comment.findByPk(req.params.id, {
+        });
+        if (!commentSingle) {
+            res.status(404).json({ message: 'No post comment found with this id!' });
+            return;
+        }
+        const single = commentSingle.toJSON();
+        res.status(200).render('commentupdate', { ...single, logged_in: req.session.logged_in });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 //update existing comment
 router.put('/:id', withAuth, async (req, res) => {
     try {
-        const updateComment = await Comment.update(
-            {
-                user_id: req.session.user_id,
-                comment_text: req.body.comment_text,
-            },
-            {
+        const updateComment = await Comment.update(req.body, {
                 where: {
                     id: req.params.id,
                 },
@@ -50,9 +62,7 @@ router.put('/:id', withAuth, async (req, res) => {
         }
         res.status(200).json(updateComment);
     } catch (e) {
-        console.log(e);
         res.status(500).json(e);
-
     }
 });
 
